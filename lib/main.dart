@@ -5,6 +5,7 @@ import 'package:wakelock/wakelock.dart';
 // my packages
 import 'layouts.dart';
 import 'food_app.dart';
+import 'routing.dart';
 
 void main() => runApp(AppContainer());
 
@@ -16,7 +17,7 @@ class AppContainer extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Layouts',
       home: Scaffold(
-        body: FoodApp(),
+        body: FirstRoute(),
       ),
     );
   }
