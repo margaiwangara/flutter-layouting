@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wakelock/wakelock.dart';
 
 class LayoutMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Wakelock
-    Wakelock.enable();
     return MaterialApp(
       title: 'Card Layout',
       home: Scaffold(
