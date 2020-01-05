@@ -97,7 +97,7 @@ Widget appHero = Container(
                         child: Row(
                           children: <Widget>[
                             Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 _myText("Fruit nutrition meal", "Montserrat",
@@ -145,9 +145,68 @@ Widget appHero = Container(
                                         13.0),
                                   ],
                                 ),
-                                Text(
-                                  'This is text three',
-                                  textDirection: TextDirection.ltr,
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Container(
+                                      child: Row(
+                                        children: <Widget>[
+                                          Icon(Icons.refresh,
+                                              color: Color(0xFF82C5BC),
+                                              size: 15.0),
+                                          SizedBox(
+                                            width: 2.5,
+                                          ),
+                                          _myText(
+                                              'Normal',
+                                              'Montserrat',
+                                              Colors.grey[400],
+                                              FontWeight.w300,
+                                              13.0)
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 15.0),
+                                      child: Row(
+                                        children: <Widget>[
+                                          Icon(Icons.location_on,
+                                              color: Color(0xFF82C5BC),
+                                              size: 15.0),
+                                          SizedBox(
+                                            width: 2.5,
+                                          ),
+                                          _myText(
+                                              '1.7km',
+                                              'Montserrat',
+                                              Colors.grey[400],
+                                              FontWeight.w300,
+                                              13.0)
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Row(
+                                        children: <Widget>[
+                                          Icon(Icons.watch_later,
+                                              color: Color(0xFF82C5BC),
+                                              size: 15.0),
+                                          SizedBox(
+                                            width: 2.5,
+                                          ),
+                                          _myText(
+                                              '32min',
+                                              'Montserrat',
+                                              Colors.grey[400],
+                                              FontWeight.w300,
+                                              13.0)
+                                        ],
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ],
                             )
