@@ -4,6 +4,7 @@ import 'package:wakelock/wakelock.dart';
 
 // my packages
 import 'layouts.dart';
+import 'food_app.dart';
 
 void main() => runApp(AppContainer());
 
@@ -12,7 +13,12 @@ class AppContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     // wakelock
     Wakelock.enable();
-    return LayoutMain();
+    return MaterialApp(
+      title: 'Flutter Layouts',
+      home: Scaffold(
+        body: FoodApp(),
+      ),
+    );
   }
 }
 
