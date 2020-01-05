@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:wakelock/wakelock.dart';
 
 // my packages
-import 'layouts.dart';
+// import 'layouts.dart';
+// import 'routing.dart';
 import 'food_app.dart';
-import 'routing.dart';
 
 void main() => runApp(AppContainer());
 
