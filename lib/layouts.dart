@@ -77,6 +77,16 @@ class _BookmarkWidgetState extends State<BookmarkWidget> {
   }
 }
 
+// trying stacks
+Stack myStack = Stack(
+  alignment: AlignmentDirectional.topStart,
+  fit: StackFit.loose,
+  children: <Widget>[
+    Container(
+      color: Colors.black12,
+    )
+  ],
+);
 // toggle bookmarked
 
 Widget cardBody = Container(
