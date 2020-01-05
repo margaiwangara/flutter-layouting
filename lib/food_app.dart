@@ -7,7 +7,7 @@ class FoodApp extends StatelessWidget {
     return ListView(
       children: <Widget>[
         Container(
-          color: Color(0xFFFFFFFF),
+          color: Color(0xFFF1F1F1),
           constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width,
               minHeight: MediaQuery.of(context).size.height),
@@ -26,7 +26,7 @@ Row mainRow = Row(
   children: <Widget>[
     Expanded(
         child: Column(
-      children: <Widget>[appHeader, appBanner],
+      children: <Widget>[appHeader, appHero],
     )),
   ],
 );
@@ -52,7 +52,7 @@ List imageList = [
   "assets/images/me5.jpg"
 ];
 
-Widget appBanner = Container(
+Widget appHero = Container(
   height: 300.0,
   padding: const EdgeInsets.symmetric(vertical: 7.5),
   child: Center(
@@ -67,20 +67,60 @@ Widget appBanner = Container(
                 color: Color(0xFFFFD87D),
                 borderRadius: BorderRadius.circular(10.0)),
             child: Stack(
-              fit: StackFit.expand,
+              overflow: Overflow.visible,
               children: <Widget>[
-                ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image(
-                      image: AssetImage(i),
-                      fit: BoxFit.cover,
-                      repeat: ImageRepeat.noRepeat,
-                    )),
+                Positioned.fill(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image(
+                          image: AssetImage(i),
+                          fit: BoxFit.cover,
+                          repeat: ImageRepeat.noRepeat,
+                        ))),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.black12,
                       borderRadius: BorderRadius.circular(10.0)),
                 ),
+                Positioned.fill(
+                  child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        padding: const EdgeInsets.all(20.0),
+                        width: MediaQuery.of(context).size.width - 110.0,
+                        height: 120.0,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFFFFFFF),
+                            borderRadius: BorderRadius.circular(15.0),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Color.fromRGBO(0, 0, 0, 0.25),
+                                  offset: Offset(0, 5.0),
+                                  blurRadius: 15.0,
+                                  spreadRadius: 40.0)
+                            ]),
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                _myText("Fruit nutrition meal", "Montserrat",
+                                    Colors.black, FontWeight.w700, 20.0),
+                                Text(
+                                  'This is text two',
+                                  textDirection: TextDirection.ltr,
+                                ),
+                                Text(
+                                  'This is text three',
+                                  textDirection: TextDirection.ltr,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                )
               ],
             ));
       });
