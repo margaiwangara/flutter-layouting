@@ -5,13 +5,21 @@ import 'package:wakelock/wakelock.dart';
 // my packages
 import 'layouts.dart';
 
-void main() => runApp(LayoutMain());
+void main() => runApp(AppContainer());
+
+class AppContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // wakelock
+    Wakelock.enable();
+    return LayoutMain();
+  }
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // wakelock
-    Wakelock.enable();
 
     // recurring items
     // final Color primaryColor = Color.fromRGBO(29, 230, 199, 1);
