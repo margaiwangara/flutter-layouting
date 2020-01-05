@@ -10,7 +10,6 @@ class FoodApp extends StatelessWidget {
           constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width,
               minHeight: MediaQuery.of(context).size.height),
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: mainRow,
         )
       ],
@@ -19,25 +18,50 @@ class FoodApp extends StatelessWidget {
 }
 
 Row mainRow = Row(
-  mainAxisSize: MainAxisSize.min,
-  mainAxisAlignment: MainAxisAlignment.start,
+  mainAxisSize: MainAxisSize.max,
   crossAxisAlignment: CrossAxisAlignment.start,
-  children: <Widget>[
-    Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[Expanded(child: appHeader)],
+);
+
+Text _myText(String content, String fontFamily, Color color,
+    FontWeight fontWeight, double fontSize) {
+  return Text(
+    content,
+    textDirection: TextDirection.ltr,
+    style: TextStyle(
+        color: color,
+        fontWeight: fontWeight,
+        fontFamily: fontFamily,
+        fontSize: fontSize),
+  );
+}
+
+Widget appHeader = Container(
+  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+  child: Row(
+    mainAxisSize: MainAxisSize.max,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+      Column(
         children: <Widget>[
-          Text(
-            'This is another text',
-            textDirection: TextDirection.ltr,
-          ),
-          Text(
-            'This is another another text',
-            textDirection: TextDirection.ltr,
-          ),
+          _myText('China', 'Montserrat', Colors.black, FontWeight.w700, 25.0),
         ],
       ),
-    )
-  ],
+      Column(
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: () {},
+            mini: true,
+            backgroundColor: Colors.cyan,
+            child: Icon(
+              Icons.search,
+              color: Colors.white,
+              size: 20.0,
+            ),
+          )
+        ],
+      )
+    ],
+  ),
 );

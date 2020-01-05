@@ -17,7 +17,7 @@ class AppContainer extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Layouts',
       home: Scaffold(
-        body: FirstRoute(),
+        body: FoodApp(),
       ),
     );
   }
