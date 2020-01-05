@@ -68,7 +68,9 @@ Widget appHero = Container(
                 color: Color(0xFFFFD87D),
                 borderRadius: BorderRadius.circular(10.0)),
             child: Stack(
+              fit: StackFit.loose,
               overflow: Overflow.visible,
+              alignment: Alignment.bottomCenter,
               children: <Widget>[
                 Positioned.fill(
                     child: ClipRRect(
@@ -78,142 +80,116 @@ Widget appHero = Container(
                           fit: BoxFit.cover,
                           repeat: ImageRepeat.noRepeat,
                         ))),
-                Container(
+                Positioned.fill(
+                    child: Container(
                   decoration: BoxDecoration(
                       color: Colors.black12,
                       borderRadius: BorderRadius.circular(10.0)),
+                )),
+                Container(
+                  padding: const EdgeInsets.all(20.0),
+                  width: MediaQuery.of(context).size.width - 110.0,
+                  height: 120.0,
+                  transform: Matrix4.translationValues(0.0, 60.0, 0.0),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFFFFF),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          _myText("Fruit nutrition meal", "Montserrat",
+                              Colors.black, FontWeight.w700, 18.0),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.star,
+                                color: Color(0xFF82C5BC),
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Color(0xFF82C5BC),
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Color(0xFF82C5BC),
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star,
+                                color: Color(0xFF82C5BC),
+                                size: 15.0,
+                              ),
+                              Icon(
+                                Icons.star_border,
+                                color: Color(0xFF82C5BC),
+                                size: 15.0,
+                              ),
+                              SizedBox(width: 5.0),
+                              _myText('4.0', 'Montserrat', Colors.grey[400],
+                                  FontWeight.w300, 13.0),
+                              SizedBox(width: 5.0),
+                              _myText('1200 Comments', 'Montserrat',
+                                  Colors.grey[400], FontWeight.w300, 13.0),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Container(
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(Icons.refresh,
+                                        color: Color(0xFF82C5BC), size: 15.0),
+                                    SizedBox(
+                                      width: 2.5,
+                                    ),
+                                    _myText('Normal', 'Montserrat',
+                                        Colors.grey[400], FontWeight.w300, 13.0)
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 15.0),
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(Icons.location_on,
+                                        color: Color(0xFF82C5BC), size: 15.0),
+                                    SizedBox(
+                                      width: 2.5,
+                                    ),
+                                    _myText('1.7km', 'Montserrat',
+                                        Colors.grey[400], FontWeight.w300, 13.0)
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(Icons.watch_later,
+                                        color: Color(0xFF82C5BC), size: 15.0),
+                                    SizedBox(
+                                      width: 2.5,
+                                    ),
+                                    _myText('32min', 'Montserrat',
+                                        Colors.grey[400], FontWeight.w300, 13.0)
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-                Positioned.fill(
-                  child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        padding: const EdgeInsets.all(20.0),
-                        width: MediaQuery.of(context).size.width - 110.0,
-                        height: 120.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFFFFFF),
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                _myText("Fruit nutrition meal", "Montserrat",
-                                    Colors.black, FontWeight.w700, 18.0),
-                                Row(
-                                  children: <Widget>[
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xFF82C5BC),
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xFF82C5BC),
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xFF82C5BC),
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xFF82C5BC),
-                                      size: 15.0,
-                                    ),
-                                    Icon(
-                                      Icons.star_border,
-                                      color: Color(0xFF82C5BC),
-                                      size: 15.0,
-                                    ),
-                                    SizedBox(width: 5.0),
-                                    _myText(
-                                        '4.0',
-                                        'Montserrat',
-                                        Colors.grey[400],
-                                        FontWeight.w300,
-                                        13.0),
-                                    SizedBox(width: 5.0),
-                                    _myText(
-                                        '1200 Comments',
-                                        'Montserrat',
-                                        Colors.grey[400],
-                                        FontWeight.w300,
-                                        13.0),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Container(
-                                      child: Row(
-                                        children: <Widget>[
-                                          Icon(Icons.refresh,
-                                              color: Color(0xFF82C5BC),
-                                              size: 15.0),
-                                          SizedBox(
-                                            width: 2.5,
-                                          ),
-                                          _myText(
-                                              'Normal',
-                                              'Montserrat',
-                                              Colors.grey[400],
-                                              FontWeight.w300,
-                                              13.0)
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 15.0),
-                                      child: Row(
-                                        children: <Widget>[
-                                          Icon(Icons.location_on,
-                                              color: Color(0xFF82C5BC),
-                                              size: 15.0),
-                                          SizedBox(
-                                            width: 2.5,
-                                          ),
-                                          _myText(
-                                              '1.7km',
-                                              'Montserrat',
-                                              Colors.grey[400],
-                                              FontWeight.w300,
-                                              13.0)
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      child: Row(
-                                        children: <Widget>[
-                                          Icon(Icons.watch_later,
-                                              color: Color(0xFF82C5BC),
-                                              size: 15.0),
-                                          SizedBox(
-                                            width: 2.5,
-                                          ),
-                                          _myText(
-                                              '32min',
-                                              'Montserrat',
-                                              Colors.grey[400],
-                                              FontWeight.w300,
-                                              13.0)
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      )),
-                )
               ],
             ));
       });
