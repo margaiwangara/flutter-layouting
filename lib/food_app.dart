@@ -53,11 +53,12 @@ List imageList = [
 ];
 
 Widget appHero = Container(
-  height: 300.0,
+  height: 250.0,
   padding: const EdgeInsets.symmetric(vertical: 7.5),
   child: Center(
       child: CarouselSlider(
-    height: 290.0,
+    enlargeCenterPage: true,
+    height: 240.0,
     items: imageList.map((i) {
       return Builder(builder: (BuildContext context) {
         return Container(
@@ -90,15 +91,9 @@ Widget appHero = Container(
                         width: MediaQuery.of(context).size.width - 110.0,
                         height: 120.0,
                         decoration: BoxDecoration(
-                            color: Color(0xFFFFFFFF),
-                            borderRadius: BorderRadius.circular(15.0),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color.fromRGBO(0, 0, 0, 0.25),
-                                  offset: Offset(0, 5.0),
-                                  blurRadius: 15.0,
-                                  spreadRadius: 40.0)
-                            ]),
+                          color: Color(0xFFFFFFFF),
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
                         child: Row(
                           children: <Widget>[
                             Column(
@@ -106,10 +101,49 @@ Widget appHero = Container(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 _myText("Fruit nutrition meal", "Montserrat",
-                                    Colors.black, FontWeight.w700, 20.0),
-                                Text(
-                                  'This is text two',
-                                  textDirection: TextDirection.ltr,
+                                    Colors.black, FontWeight.w700, 18.0),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xFF82C5BC),
+                                      size: 15.0,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xFF82C5BC),
+                                      size: 15.0,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xFF82C5BC),
+                                      size: 15.0,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xFF82C5BC),
+                                      size: 15.0,
+                                    ),
+                                    Icon(
+                                      Icons.star_border,
+                                      color: Color(0xFF82C5BC),
+                                      size: 15.0,
+                                    ),
+                                    SizedBox(width: 5.0),
+                                    _myText(
+                                        '4.0',
+                                        'Montserrat',
+                                        Colors.grey[400],
+                                        FontWeight.w300,
+                                        13.0),
+                                    SizedBox(width: 5.0),
+                                    _myText(
+                                        '1200 Comments',
+                                        'Montserrat',
+                                        Colors.grey[400],
+                                        FontWeight.w300,
+                                        13.0),
+                                  ],
                                 ),
                                 Text(
                                   'This is text three',
