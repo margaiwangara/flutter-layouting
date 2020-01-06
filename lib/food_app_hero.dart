@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class ScrollApp extends StatelessWidget {
+class FoodAppHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
