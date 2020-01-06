@@ -1,11 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wakelock/wakelock.dart';
+import 'config/theme.dart';
 
 // my packages
 // import 'layouts.dart';
 // import 'routing.dart';
-import 'food_app.dart';
+// import 'food_app.dart';
 import 'scroller.dart';
 
 void main() => runApp(AppContainer());
@@ -16,6 +17,7 @@ class StackApp extends StatelessWidget {
     Wakelock.enable();
     return MaterialApp(
       title: 'Stack App',
+      theme: appTheme,
       home: Scaffold(
         body: Center(
           child: Stack(
@@ -49,6 +51,7 @@ class AppContainer extends StatelessWidget {
     Wakelock.enable();
     return MaterialApp(
       title: 'Flutter Layouts',
+      theme: appTheme,
       home: Scaffold(
         backgroundColor: Color(0xFFF1F1F1),
         body: ScrollApp(),
