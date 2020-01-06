@@ -103,18 +103,71 @@ class FoodAppBody extends StatelessWidget {
                               style: Theme.of(context).textTheme.subtitle,
                               softWrap: true,
                             ),
-                            // Row(
-                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            //   children: <Widget>[
-                            //     Container(
-                            //       child: Row(
-                            //         children: <Widget>[
-                            //           Icon(Icons.)
-                            //         ],
-                            //       ),
-                            //     )
-                            //   ],
-                            // )
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: Row(
+                                    children: <Widget>[
+                                      Container(
+                                        child: Row(
+                                          children: <Widget>[
+                                            _myIcon(Icons.refresh, 13.0,
+                                                Theme.of(context).accentColor),
+                                            SizedBox(
+                                              width: 2.5,
+                                            ),
+                                            new Text(
+                                              'Normal',
+                                              textDirection: TextDirection.ltr,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle,
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Row(
+                                          children: <Widget>[
+                                            _myIcon(Icons.location_on, 13.0,
+                                                Theme.of(context).accentColor),
+                                            SizedBox(
+                                              width: 2.5,
+                                            ),
+                                            new Text(
+                                              '1.7km',
+                                              textDirection: TextDirection.ltr,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle,
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Row(
+                                          children: <Widget>[
+                                            _myIcon(Icons.watch_later, 13.0,
+                                                Theme.of(context).accentColor),
+                                            SizedBox(
+                                              width: 2.5,
+                                            ),
+                                            new Text(
+                                              '32min',
+                                              textDirection: TextDirection.ltr,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle,
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            )
                           ],
                         ),
                       ))
@@ -126,4 +179,12 @@ class FoodAppBody extends StatelessWidget {
       ],
     );
   }
+}
+
+Icon _myIcon(IconData icon, double iconSize, Color iconColor) {
+  return new Icon(
+    icon,
+    size: iconSize,
+    color: iconColor,
+  );
 }
