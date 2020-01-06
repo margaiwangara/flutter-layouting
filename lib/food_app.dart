@@ -53,12 +53,9 @@ List imageList = [
 ];
 
 Widget appHero = Container(
-  height: 250.0,
-  padding: const EdgeInsets.symmetric(vertical: 7.5),
-  child: Center(
-      child: CarouselSlider(
+  child: CarouselSlider(
     enlargeCenterPage: true,
-    height: 240.0,
+    height: 250.0,
     items: imageList.map((i) {
       return Builder(builder: (BuildContext context) {
         return Stack(
@@ -72,7 +69,7 @@ Widget appHero = Container(
                     color: Color(0xFFFFD87D),
                     borderRadius: BorderRadius.circular(10.0))),
             Positioned(
-                bottom: -50.0,
+                bottom: -15.0,
                 child: Container(
                   width: 100.0,
                   height: 100.0,
@@ -82,7 +79,7 @@ Widget appHero = Container(
         );
       });
     }).toList(),
-  )),
+  ),
 );
 
 Column heroCard = Column(

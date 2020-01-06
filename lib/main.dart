@@ -6,6 +6,7 @@ import 'package:wakelock/wakelock.dart';
 // import 'layouts.dart';
 // import 'routing.dart';
 import 'food_app.dart';
+import 'scroller.dart';
 
 void main() => runApp(AppContainer());
 
@@ -49,7 +50,8 @@ class AppContainer extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Layouts',
       home: Scaffold(
-        body: FoodApp(),
+        backgroundColor: Color(0xFFF1F1F1),
+        body: ScrollApp(),
       ),
     );
   }
