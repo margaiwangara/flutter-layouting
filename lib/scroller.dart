@@ -28,7 +28,7 @@ class ScrollApp extends StatelessWidget {
                     bottom: -50.0,
                     child: Container(
                       width: 250.0,
-                      constraints: BoxConstraints(minHeight: 100.0),
+                      constraints: BoxConstraints(minHeight: 125.0),
                       child: floatingCard(context),
                     ),
                   )
@@ -52,11 +52,11 @@ Card floatingCard(context) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Lorem ipsum.',
+            Text('Awesome meal',
                 textDirection: TextDirection.ltr,
                 style: Theme.of(context).textTheme.title),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   child: Row(
@@ -70,7 +70,7 @@ Card floatingCard(context) {
                       _myIcon(Icons.star_border, 13.0,
                           Theme.of(context).accentColor),
                       SizedBox(
-                        width: 5.0,
+                        width: 2.5,
                       ),
                       new Text(
                         '3.5',
@@ -79,12 +79,79 @@ Card floatingCard(context) {
                       )
                     ],
                   ),
+                ),
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      _myIcon(
+                          Icons.comment, 13.0, Theme.of(context).accentColor),
+                      SizedBox(
+                        width: 2.5,
+                      ),
+                      new Text(
+                        '50',
+                        textDirection: TextDirection.ltr,
+                        style: Theme.of(context).textTheme.subtitle,
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
-            Text('Some other details',
-                textDirection: TextDirection.ltr,
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12.0)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      _myIcon(
+                          Icons.refresh, 13.0, Theme.of(context).accentColor),
+                      SizedBox(
+                        width: 2.5,
+                      ),
+                      new Text(
+                        'Normal',
+                        textDirection: TextDirection.ltr,
+                        style: Theme.of(context).textTheme.subtitle,
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      _myIcon(Icons.location_on, 13.0,
+                          Theme.of(context).accentColor),
+                      SizedBox(
+                        width: 2.5,
+                      ),
+                      new Text(
+                        '1.7km',
+                        textDirection: TextDirection.ltr,
+                        style: Theme.of(context).textTheme.subtitle,
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      _myIcon(Icons.watch_later, 13.0,
+                          Theme.of(context).accentColor),
+                      SizedBox(
+                        width: 2.5,
+                      ),
+                      new Text(
+                        '32min',
+                        textDirection: TextDirection.ltr,
+                        style: Theme.of(context).textTheme.subtitle,
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ],
         )),
   );

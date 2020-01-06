@@ -13,5 +13,5 @@ ThemeData appTheme = ThemeData(
       title: TextStyle(
           fontSize: 18.0, fontWeight: FontWeight.w700, letterSpacing: 0.5),
       subtitle: TextStyle(
-          fontSize: 13.0, fontWeight: FontWeight.w400, letterSpacing: 0.5),
+          fontSize: 13.0, fontWeight: FontWeight.w300, letterSpacing: 0.5),
     ));
