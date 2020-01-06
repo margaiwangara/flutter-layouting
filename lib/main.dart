@@ -8,7 +8,8 @@ import 'config/theme.dart';
 // import 'routing.dart';
 // import 'food_app.dart';
 // import 'food_app_hero.dart';
-import 'food_app_body.dart';
+// import 'food_app_body.dart';
+import 'photogrid.dart';
 
 void main() => runApp(AppContainer());
 
@@ -55,7 +56,11 @@ class AppContainer extends StatelessWidget {
       theme: appTheme,
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: FoodAppBody(),
+        appBar: AppBar(
+          title: Text('Flutter Layouts - Grid'),
+          centerTitle: true,
+        ),
+        body: PhotoGrid(),
       ),
     );
   }
