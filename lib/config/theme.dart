@@ -5,6 +5,13 @@ ThemeData appTheme = ThemeData(
     accentColor: Color(0xFF82C5BC),
     fontFamily: 'Montserrat',
     textTheme: TextTheme(
+      display1: TextStyle(
+          fontSize: 25.0,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 0.5,
+          color: Colors.black),
+      body1: TextStyle(
+          fontSize: 15.0, fontWeight: FontWeight.w300, letterSpacing: 0.5),
       headline: TextStyle(
           fontSize: 25.0,
           fontWeight: FontWeight.w700,

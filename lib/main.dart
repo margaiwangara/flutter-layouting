@@ -7,7 +7,8 @@ import 'config/theme.dart';
 // import 'layouts.dart';
 // import 'routing.dart';
 // import 'food_app.dart';
-import 'food_app_hero.dart';
+// import 'food_app_hero.dart';
+import 'food_app_body.dart';
 
 void main() => runApp(AppContainer());
 
@@ -54,7 +55,7 @@ class AppContainer extends StatelessWidget {
       theme: appTheme,
       home: Scaffold(
         backgroundColor: Color(0xFFF1F1F1),
-        body: FoodAppHero(),
+        body: FoodAppBody(),
       ),
     );
   }
