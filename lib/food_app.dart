@@ -61,46 +61,25 @@ Widget appHero = Container(
     height: 240.0,
     items: imageList.map((i) {
       return Builder(builder: (BuildContext context) {
-        return Container(
-            width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.symmetric(horizontal: 5.0),
-            decoration: BoxDecoration(
-                color: Color(0xFFFFD87D),
-                borderRadius: BorderRadius.circular(10.0)),
-            child: Stack(
-              fit: StackFit.loose,
-              overflow: Overflow.visible,
-              alignment: Alignment.bottomCenter,
-              children: <Widget>[
-                Positioned.fill(
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Image(
-                          image: AssetImage(i),
-                          fit: BoxFit.cover,
-                          repeat: ImageRepeat.noRepeat,
-                        ))),
-                Positioned.fill(
-                    child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(10.0)),
-                )),
-                Container(
-                  padding: const EdgeInsets.all(20.0),
-                  width: MediaQuery.of(context).size.width - 110.0,
-                  height: 120.0,
-                  transform: Matrix4.translationValues(0.0, 0.0, 0.0),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFFFFFF),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: Row(
-                    children: <Widget>[heroCard],
-                  ),
-                ),
-              ],
-            ));
+        return Stack(
+          overflow: Overflow.visible,
+          alignment: Alignment.bottomCenter,
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                decoration: BoxDecoration(
+                    color: Color(0xFFFFD87D),
+                    borderRadius: BorderRadius.circular(10.0))),
+            Positioned(
+                bottom: -50.0,
+                child: Container(
+                  width: 100.0,
+                  height: 100.0,
+                  color: Color(0xFF82C5BC),
+                ))
+          ],
+        );
       });
     }).toList(),
   )),
@@ -109,6 +88,7 @@ Widget appHero = Container(
 Column heroCard = Column(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   crossAxisAlignment: CrossAxisAlignment.start,
+  mainAxisSize: MainAxisSize.max,
   children: <Widget>[
     _myText("Fruit nutrition meal", "Montserrat", Colors.black, FontWeight.w700,
         18.0),
@@ -144,18 +124,28 @@ Row heroCardBottom = Row(
   mainAxisSize: MainAxisSize.max,
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: <Widget>[
-    _heroCardBottomContainer('Normal', Icons.refresh, Color(0xFF82C5BC),
-        Colors.grey[400], 15.0, 13.0),
-    SizedBox(
-      width: 5.0,
-    ),
-    _heroCardBottomContainer('1.7km', Icons.location_on, Color(0xFF82C5BC),
-        Colors.grey[400], 15.0, 13.0),
-    SizedBox(
-      width: 5.0,
-    ),
-    _heroCardBottomContainer('32min', Icons.refresh, Color(0xFF82C5BC),
-        Colors.grey[400], 15.0, 13.0),
+    Column(
+      children: <Widget>[
+        Container(
+          color: Colors.cyan,
+        )
+      ],
+    )
+    // Text(
+    //   'x'.toUpperCase(),
+    //   textDirection: TextDirection.ltr,
+    //   style: TextStyle(fontSize: 10.0),
+    // ),
+    // Text(
+    //   'y'.toUpperCase(),
+    //   textDirection: TextDirection.ltr,
+    //   style: TextStyle(fontSize: 10.0),
+    // ),
+    // Text(
+    //   'z'.toUpperCase(),
+    //   textDirection: TextDirection.ltr,
+    //   style: TextStyle(fontSize: 10.0),
+    // )
   ],
 );
 
