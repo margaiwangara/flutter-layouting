@@ -7,7 +7,39 @@ import 'package:wakelock/wakelock.dart';
 // import 'routing.dart';
 import 'food_app.dart';
 
-void main() => runApp(AppContainer());
+void main() => runApp(StackApp());
+
+class StackApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Wakelock.enable();
+    return MaterialApp(
+      title: 'Stack App',
+      home: Scaffold(
+        body: Center(
+          child: Stack(
+            overflow: Overflow.visible,
+            alignment: Alignment.bottomCenter,
+            children: <Widget>[
+              new Container(
+                width: 150.0,
+                height: 150.0,
+                color: Colors.cyan,
+              ),
+              Positioned(
+                  bottom: -50.0,
+                  child: new Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.green,
+                  ))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class AppContainer extends StatelessWidget {
   @override
