@@ -90,104 +90,13 @@ Widget appHero = Container(
                   padding: const EdgeInsets.all(20.0),
                   width: MediaQuery.of(context).size.width - 110.0,
                   height: 120.0,
-                  transform: Matrix4.translationValues(0.0, 60.0, 0.0),
+                  transform: Matrix4.translationValues(0.0, 0.0, 0.0),
                   decoration: BoxDecoration(
                     color: Color(0xFFFFFFFF),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   child: Row(
-                    children: <Widget>[
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          _myText("Fruit nutrition meal", "Montserrat",
-                              Colors.black, FontWeight.w700, 18.0),
-                          Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.star,
-                                color: Color(0xFF82C5BC),
-                                size: 15.0,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Color(0xFF82C5BC),
-                                size: 15.0,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Color(0xFF82C5BC),
-                                size: 15.0,
-                              ),
-                              Icon(
-                                Icons.star,
-                                color: Color(0xFF82C5BC),
-                                size: 15.0,
-                              ),
-                              Icon(
-                                Icons.star_border,
-                                color: Color(0xFF82C5BC),
-                                size: 15.0,
-                              ),
-                              SizedBox(width: 5.0),
-                              _myText('4.0', 'Montserrat', Colors.grey[400],
-                                  FontWeight.w300, 13.0),
-                              SizedBox(width: 5.0),
-                              _myText('1200 Comments', 'Montserrat',
-                                  Colors.grey[400], FontWeight.w300, 13.0),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Container(
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(Icons.refresh,
-                                        color: Color(0xFF82C5BC), size: 15.0),
-                                    SizedBox(
-                                      width: 2.5,
-                                    ),
-                                    _myText('Normal', 'Montserrat',
-                                        Colors.grey[400], FontWeight.w300, 13.0)
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(Icons.location_on,
-                                        color: Color(0xFF82C5BC), size: 15.0),
-                                    SizedBox(
-                                      width: 2.5,
-                                    ),
-                                    _myText('1.7km', 'Montserrat',
-                                        Colors.grey[400], FontWeight.w300, 13.0)
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: <Widget>[
-                                    Icon(Icons.watch_later,
-                                        color: Color(0xFF82C5BC), size: 15.0),
-                                    SizedBox(
-                                      width: 2.5,
-                                    ),
-                                    _myText('32min', 'Montserrat',
-                                        Colors.grey[400], FontWeight.w300, 13.0)
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
+                    children: <Widget>[heroCard],
                   ),
                 ),
               ],
@@ -196,6 +105,74 @@ Widget appHero = Container(
     }).toList(),
   )),
 );
+
+Column heroCard = Column(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+    _myText("Fruit nutrition meal", "Montserrat", Colors.black, FontWeight.w700,
+        18.0),
+    heroCardCenter,
+    heroCardBottom
+  ],
+);
+
+Row heroCardCenter = Row(
+  children: <Widget>[
+    _myIcon(Icons.star, 15.0, Color(0xFF82C5BC)),
+    _myIcon(Icons.star, 15.0, Color(0xFF82C5BC)),
+    _myIcon(Icons.star, 15.0, Color(0xFF82C5BC)),
+    _myIcon(Icons.star, 15.0, Color(0xFF82C5BC)),
+    _myIcon(Icons.star_border, 15.0, Color(0xFF82C5BC)),
+    SizedBox(width: 5.0),
+    _myText('4.0', 'Montserrat', Colors.grey[400], FontWeight.w300, 13.0),
+    SizedBox(width: 5.0),
+    _myText(
+        '1200 Comments', 'Montserrat', Colors.grey[400], FontWeight.w300, 13.0),
+  ],
+);
+
+Icon _myIcon(IconData icon, double size, Color color) {
+  return new Icon(
+    icon,
+    color: color,
+    size: size,
+  );
+}
+
+Row heroCardBottom = Row(
+  mainAxisSize: MainAxisSize.max,
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: <Widget>[
+    _heroCardBottomContainer('Normal', Icons.refresh, Color(0xFF82C5BC),
+        Colors.grey[400], 15.0, 13.0),
+    SizedBox(
+      width: 5.0,
+    ),
+    _heroCardBottomContainer('1.7km', Icons.location_on, Color(0xFF82C5BC),
+        Colors.grey[400], 15.0, 13.0),
+    SizedBox(
+      width: 5.0,
+    ),
+    _heroCardBottomContainer('32min', Icons.refresh, Color(0xFF82C5BC),
+        Colors.grey[400], 15.0, 13.0),
+  ],
+);
+
+Container _heroCardBottomContainer(String content, IconData icon,
+    Color iconColor, Color textColor, double iconSize, double textSize) {
+  return new Container(
+    child: Row(
+      children: <Widget>[
+        _myIcon(icon, iconSize, iconColor),
+        SizedBox(
+          width: 2.5,
+        ),
+        _myText(content, 'Montserrat', textColor, FontWeight.w300, iconSize)
+      ],
+    ),
+  );
+}
 
 Widget appHeader = Container(
   padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),

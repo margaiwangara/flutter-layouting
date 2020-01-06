@@ -7,7 +7,7 @@ import 'package:wakelock/wakelock.dart';
 // import 'routing.dart';
 import 'food_app.dart';
 
-void main() => runApp(StackApp());
+void main() => runApp(AppContainer());
 
 class StackApp extends StatelessWidget {
   @override
