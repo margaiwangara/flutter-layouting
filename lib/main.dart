@@ -54,7 +54,7 @@ class AppContainer extends StatelessWidget {
       title: 'Flutter Layouts',
       theme: appTheme,
       home: Scaffold(
-        backgroundColor: Color(0xFFF1F1F1),
+        backgroundColor: Colors.white,
         body: FoodAppBody(),
       ),
     );

@@ -98,7 +98,7 @@ class FoodAppBody extends StatelessWidget {
                               style: Theme.of(context).textTheme.title,
                             ),
                             Text(
-                              'With chinese chars.',
+                              'Lorem ipsum dolor sit amet',
                               textDirection: TextDirection.ltr,
                               style: Theme.of(context).textTheme.subtitle,
                               softWrap: true,
