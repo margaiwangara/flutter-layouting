@@ -5,25 +5,44 @@ class PhotoGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: <Widget>[
-        _myImage("me1.jpg"),
-        _myImage("me2.jpg"),
-        _myImage("me3.jpg"),
-        _myImage("me4.jpg"),
-        _myImage("me5.jpg"),
-        _myImage("pic1.jpg"),
-        _myImage("pic2.jpeg"),
-        _myImage("pic3.jpg"),
-      ],
+      children: imageList(context),
     );
   }
-}
 
-Image _myImage(String imageName) {
-  return new Image(
-    image: AssetImage("assets/images/$imageName"),
-    fit: BoxFit.cover,
-    repeat: ImageRepeat.noRepeat,
-    alignment: Alignment.center,
-  );
+  static List<String> images = [
+    "me1.jpg",
+    "me2.jpg",
+    "me3.jpg",
+    "me4.jpg",
+    "me5.jpg",
+    "pic1.jpg",
+    "pic2.jpeg",
+    "pic3.jpg"
+  ];
+
+  static List<InkWell> imageList(BuildContext context) {
+    return images.map((i) {
+      return _myImage(i, context);
+    }).toList();
+  }
+
+  static InkWell _myImage(String imageName, BuildContext context) {
+    return new InkWell(
+        onTap: () {
+          Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text('Tapped'),
+            duration: Duration(seconds: 2),
+          ));
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/$imageName"),
+                  fit: BoxFit.cover,
+                  repeat: ImageRepeat.noRepeat,
+                  alignment: Alignment.center,
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.6), BlendMode.dst))),
+        ));
+  }
 }
